@@ -1,5 +1,5 @@
 def calcular_media_trimestral(cidade):
-    """Calcula a média de temperatura de 4 trimestres com validação de entrada."""
+    """Calcula a média de temperatura de 4 trimestres."""
     print(f"\n--- Processando: {cidade} ---")
     soma = 0
     
@@ -44,11 +44,11 @@ def main():
         try:
             escolha_int = int(escolha)
             
-            # Se escolheu uma cidade existente
+            # Escolha de uma cidade 
             if 1 <= escolha_int <= len(cidades):
                 cidade_escolhida = cidades[escolha_int - 1]
                 
-            # Se escolheu adicionar uma nova cidade
+            # Adicionar uma nova cidade
             elif escolha_int == len(cidades) + 1:
                 cidade_escolhida = input("\nDigite o nome da nova cidade: ").strip().title()
                 if cidade_escolhida:
@@ -60,7 +60,6 @@ def main():
                 print("\nOpção inválida! Escolha um número do menu.")
                 continue
             
-            # Executa a lógica para a cidade selecionada
             media = calcular_media_trimestral(cidade_escolhida)
             
             print(f"\n> Média Anual de {cidade_escolhida}: {media:.1f}°C")
@@ -69,6 +68,6 @@ def main():
         except ValueError:
             print("\nPor favor, digite apenas o número correspondente à opção do menu.")
 
-# Boa prática em Python para executar a função principal
 if __name__ == "__main__":
+
     main()
